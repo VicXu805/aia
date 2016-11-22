@@ -34,9 +34,7 @@ read CFM
 if [ $CFM == "Y" ];then
 for i in `cat ./${BASEDIR}/${SERVERLIST}` 
 do 
-scp ./${BASEDIR}/${IDPWFILE} ${USER}@${i}:/tmp
-ssh ${USER}@${i} -t "sudo chpasswd < /tmp/${IDPWFILE}"
-ssh ${USER}@${i} -t "sudo rm -f /tmp/${IDPWFILE}"
+ssh ${USER}@${i} -t "echo $PW |sudo passwd --stdin $ID"
 done
 else
 echo "no changed"
