@@ -1,4 +1,6 @@
 #!/bin/bash
+#this script is used for batch change Linux ID password remotely 
+#user need to deploy ssh public key first and have NOPASSWD: sudo passwd / chpasswd access on remote server
 BASEDIR=chpw.tmp
 IDPWFILE=idpw.txt
 SERVERLIST=list.txt
